@@ -93,6 +93,9 @@ visit :http://ip/api/stl/actions/download?filePath=5tckNs4Ydqz58s7VvQ9RxQ0equals
 
 <img width="692" height="288" alt="image" src="https://github.com/user-attachments/assets/f3e0631f-3fe8-48d1-8f6e-15ef63ef9bfc" />
 
+<img width="1203" height="782" alt="image" src="https://github.com/user-attachments/assets/b614bc35-d167-4edc-97d6-b4ffdba93c22" />
+
+
 Successfully downloaded passwd file
 
 Vulnerability code analysis
