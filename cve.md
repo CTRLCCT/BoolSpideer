@@ -1,4 +1,14 @@
-Visit the backend at http://ip/ss-admin/login/
+SSCMS has an arbitrary file download vulnerability that allows attackers to download arbitrary files through the API download interface
+
+Vulnerable version:<=7.3.1
+
+Official website: https://sscms.com
+
+Source code: https://github.com/siteserver/cms
+
+Specific construction process : https://sscms.com/docs/v7/getting-started/
+
+Visit the backend at http://43.128.228.46/ss-admin/login/
 <img width="693" height="446" alt="image" src="https://github.com/user-attachments/assets/86917f27-4e55-47cb-9bb3-db5e7202477f" />
 
 Right-click on "Check" and navigate to the verification code area as shown below:
@@ -89,7 +99,7 @@ else:
 
 <img width="692" height="99" alt="image" src="https://github.com/user-attachments/assets/19c80011-2048-42f3-bc7c-59fee4589d5c" />
 
-visit :http://ip/api/stl/actions/download?filePath=5tckNs4Ydqz58s7VvQ9RxQ0equals00equals00secret0
+visit :http://43.128.228.46/api/stl/actions/download?filePath=5tckNs4Ydqz58s7VvQ9RxQ0equals00equals00secret0
 
 <img width="692" height="288" alt="image" src="https://github.com/user-attachments/assets/f3e0631f-3fe8-48d1-8f6e-15ef63ef9bfc" />
 
